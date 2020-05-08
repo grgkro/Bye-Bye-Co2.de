@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VermietenComponent } from './vermieten/vermieten.component';
 import { MietenComponent } from './mieten/mieten.component';
+import { KontaktComponent } from './kontakt/kontakt.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { MietenComponent } from './mieten/mieten.component';
     AppComponent,
     VermietenComponent,
     MietenComponent,
+    KontaktComponent,
   ],
   imports: [
     BrowserModule,
