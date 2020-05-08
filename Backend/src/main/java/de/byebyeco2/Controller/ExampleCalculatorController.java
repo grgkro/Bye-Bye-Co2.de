@@ -1,9 +1,11 @@
-package de.byebyeco2.ExampleCalculator;
+package de.byebyeco2.Controller;
 
+import de.byebyeco2.Entities.ExampleCalculator;
+import de.byebyeco2.Dtos.ExampleCalculatorDto;
+import de.byebyeco2.Services.ExampleCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
@@ -21,19 +23,21 @@ public class ExampleCalculatorController {
             return exampleCalculatorService.listGroups();
         }
 
+
         /**
-         * Get's a group as JSON from the angular-client and saves it as a new group into the repository
+         * Get's an example as JSON from the angular-client and saves it as a new example into the repository
          *
-         * @return: an updated list of all groups from the database
+         * @return: boolean if successful
          */
-        @PostMapping("spring/createGroup")
-        public List<ExampleCalculatorDto> createGroup (@RequestBody ExampleCalculatorDto exampleCalculatorDto) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy hh:mm");
+        @PostMapping("exampleCalculator/saveExample")
+        public Boolean saveExample (@RequestBody ExampleCalculator exampleCalculator) {
+            exampleCalculatorService.saveExample(exampleCalculator);
+           // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy hh:mm");
             // TODO: replace LocalDateTime.now() in the new Group with the actual formatted timestamps from the GroupDto
 
 
 
-            return exampleCalculatorService.listGroups();
+            return true;
         }
 
 }
