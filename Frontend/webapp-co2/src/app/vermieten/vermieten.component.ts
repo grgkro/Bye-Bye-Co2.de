@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-vermieten',
@@ -9,10 +10,15 @@ export class VermietenComponent implements OnInit {
 
   clickCounter: number = 0;
   name: String = '';
+  roofs: Object;
 
-  constructor() { }
+  constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
+    this._http.getRoofs().subscribe(data => {
+      this.roofs = data;
+      console.log(this.roofs);
+    });
   }
 
   countClick() {
