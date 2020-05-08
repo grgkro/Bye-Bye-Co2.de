@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { VermietenComponent } from './vermieten/vermieten.component';
 import { MietenComponent } from './mieten/mieten.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { KontaktComponent } from './kontakt/kontakt.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
