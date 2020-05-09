@@ -3,9 +3,8 @@
 <h1>Dächer in der DB:</h1>
 <ul *ngIf="roofs">
     <li *ngFor="let roof of roofs">
-        <p class="name">{{ roof.name }}</p>
-        <p class="country">{{ roof.country }}</p>
-        <a href="{{ roof.website_url }}" class="site">website</a>
+        <p class="name">{{ roof.orientation }}</p>
+        <p class="country">{{ roof.roofTilt }}</p>
     </li>
 </ul>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { Roof } from 'src/app/_models/roof';
 
 @Component({
   selector: 'app-vermieten',
@@ -11,10 +12,17 @@ export class VermietenComponent implements OnInit {
   clickCounter: number = 0;
   name: String = '';
   roofs: Object;
+  roof: Roof = {
+    orientation: 1,
+    roofTilt: 5,
+    roofType: 70
+  };
+
 
   constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
+
     this._http.getRoofs().subscribe(data => {
       this.roofs = data;
       console.log(this.roofs);
@@ -22,6 +30,12 @@ export class VermietenComponent implements OnInit {
   }
 
   countClick() {
+    this.roof.orientation = 1;
+    this.roof.roofTilt = this.clickCounter;
+    this.roof.roofType = 50
+    this._http.saveRoof(this.roof).subscribe(data => {
+      console.log(data);
+    })
     this.clickCounter += 1;
   }
 
