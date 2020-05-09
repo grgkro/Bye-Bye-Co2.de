@@ -1,13 +1,12 @@
 package de.byebyeco2.Controller;
 
 import de.byebyeco2.Dtos.RoofDto;
-import de.byebyeco2.Entities.ExampleCalculator;
 import de.byebyeco2.Entities.Roof;
-import de.byebyeco2.Services.ExampleCalculatorService;
-import de.byebyeco2.Services.RoofService;
+import de.byebyeco2.Services.RoofServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @RestController
@@ -15,14 +14,25 @@ import java.util.List;
 public class RoofController {
 
     @Autowired
-    private RoofService roofService;
+    private RoofServiceImpl roofServiceImpl;
 
-    /**
-     * @return: all roofs from the repository
-     */
+    @PostConstruct
+    public void createBaseDataset() {
+        // places
+        Roof roof = new Roof();
+        roof.setOrientation(1);
+        roof.setRoofTilt(2);
+        roof.setRoofType(3);
+        roofServiceImpl.saveRoof(roof);
+    }
+
+
+        /**
+         * @return: all roofs from the repository
+         */
     @GetMapping("roofs/getAllRoofs")
     public List<Roof> getAllRoofs() {
-        return roofService.listRoofs();
+        return roofServiceImpl.listAll();
     }
 
     /**
@@ -31,12 +41,8 @@ public class RoofController {
      * @return: boolean if successful
      */
     @PostMapping("roofs/saveRoof")
-    public Boolean saveRoof(@RequestBody Roof roof) {
-        roofService.saveRoof(roof);
-        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy hh:mm");
-        // TODO: replace LocalDateTime.now() in the new Group with the actual formatted timestamps from the GroupDto
-
-
+    public Boolean saveRoof(@RequestBody RoofDto roofDto) {
+        roofServiceImpl.saveRoof(new Roof(roofDto.getOrientation(), roofDto.getRoofTilt(), roofDto.getRoofType()));
         return true;
     }
 

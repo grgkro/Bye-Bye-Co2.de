@@ -15,20 +15,15 @@
 	<description>Dachvermietungen</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
-		<!-- this dependency is needed to automatically restart the Spring-Server when any changes are saved ;) -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>2.2.6.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -36,7 +31,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -59,17 +58,6 @@
 			-->
 		</dependency>
 
-		<!--
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
-		</dependency>
--->
 	</dependencies>
 
 	<build>
