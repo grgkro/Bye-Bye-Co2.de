@@ -1,14 +1,23 @@
-package de.byebyeco2.Dtos;
+package de.byebyeco2.Entities;
 
-public class RoofDto {
+import javax.persistence.*;
+
+@Entity
+@Table(name="roof_searches")
+public class RoofSearch extends Listing {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private int orientation; // 0 = south, 1 = southwest, 2 = west, ...
     private int roofTilt; //Neigung 0°, 15°, 30°, 45° etc.
     private int roofType; // 0 = Flachdach, 1 = Satteldach etc.
+    private boolean ownUse;
+    private int kWp;
 
-    public RoofDto(int orientation, int roofTilt, int roofType) {
-        this.orientation = orientation;
-        this.roofTilt = roofTilt;
-        this.roofType = roofType;
+    public Long getId() {
+        return id;
     }
 
     public int getOrientation() {
@@ -33,5 +42,21 @@ public class RoofDto {
 
     public void setRoofType(int roofType) {
         this.roofType = roofType;
+    }
+
+    public boolean isOwnUse() {
+        return ownUse;
+    }
+
+    public void setOwnUse(boolean ownUse) {
+        this.ownUse = ownUse;
+    }
+
+    public int getkWp() {
+        return kWp;
+    }
+
+    public void setkWp(int kWp) {
+        this.kWp = kWp;
     }
 }
