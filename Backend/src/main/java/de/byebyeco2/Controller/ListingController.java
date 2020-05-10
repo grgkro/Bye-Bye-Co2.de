@@ -70,7 +70,6 @@ public class ListingController {
      */
     @PostMapping("roofs/saveRoof")
     public Boolean saveRoof(@RequestBody RoofOfferDto roofOfferDto) {
-        Listing roofOffer = market.manageListing(Types.RoofTypes.roof, Types.ListingTypes.offer);
         listingServiceImpl.saveOrUpdateRoofOffer(new RoofOffer(roofOfferDto.getOrientation(), roofOfferDto.getRoofTilt(), roofOfferDto.getRoofType()));
         return true;
     }
