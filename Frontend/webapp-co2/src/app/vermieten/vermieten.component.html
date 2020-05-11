@@ -1,30 +1,119 @@
-<h1>welcome!</h1> 
+<!-- Full Page Intro -->
+<div class="view image">
+        <form class="form-horizontal">
+        <fieldset>
 
-<h1>Dächer in der DB:</h1>
-<ul *ngIf="roofs">
-    <li *ngFor="let roof of roofs">
-        <p class="name">{{ roof.orientation }}</p>
-        <p class="country">{{ roof.roofTilt }}</p>
-    </li>
-</ul>
+            <!-- Form Name -->
+            <legend>Dach vermieten</legend>
 
-<div class="play-container">
-    <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Text Input</label>
+                <div class="col-md-8">
+                    <input id="textinput" name="textinput" type="text" placeholder="Titel der Anzeige"
+                        class="form-control input-md" required="">
+                    <span class="help-block">help</span>
+                </div>
+            </div>
+
+            <!-- Appended Input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="appendedtext">Appended Text</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="appendedtext" name="appendedtext" class="form-control" placeholder="placeholder"
+                            type="text">
+                        <span class="input-group-addon">append</span>
+                    </div>
+                    <p class="help-block">help</p>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+                <div class="col-md-4">
+                    <select id="selectbasic" name="selectbasic" class="form-control">
+                        <option value="1">Option one</option>
+                        <option value="2">Option two</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Text Input</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="textinput" type="text" placeholder="placeholder"
+                        class="form-control input-md">
+                    <span class="help-block">help</span>
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textarea">Text Area</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+                </div>
+            </div>
+
+            <!-- Prepended checkbox -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="prependedcheckbox">Prepended Checkbox</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox">
+                        </span>
+                        <input id="prependedcheckbox" name="prependedcheckbox" class="form-control" type="text"
+                            placeholder="placeholder">
+                    </div>
+                    <p class="help-block">help</p>
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="passwordinput">Password Input</label>
+                <div class="col-md-4">
+                    <input id="passwordinput" name="passwordinput" type="password" placeholder="placeholder"
+                        class="form-control input-md">
+                    <span class="help-block">help</span>
+                </div>
+            </div>
+
+            <!-- Button Drop Down -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="buttondropdown">Button Drop Down</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="buttondropdown" name="buttondropdown" class="form-control" placeholder="placeholder"
+                            type="text">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                Action
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Option one</a></li>
+                                <li><a href="#">Option two</a></li>
+                                <li><a href="#">Option three</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="button1id">Double Button</label>
+                <div class="col-md-8">
+                    <button id="button1id" name="button1id" class="btn btn-success">Good Button</button>
+                    <button id="button2id" name="button2id" class="btn btn-danger">Scary Button</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
 </div>
-
-<div class="play-container">
-    <p>
-        <input type="text" [(ngModel)]="name">
-        <br>
-        <strong>You said:</strong> {{ name }}
-    </p>
-</div>
-
-<div class="play-container" [ngClass]="setClasses()">
-    <ng-template [ngIf]='clickCounter > 4' [ngIfElse]="none" >
-        <p>>4</p>
-    </ng-template>
-    <ng-template #none>
-        <p>smaller4</p>
-    </ng-template>
-</div>
+<!-- Full Page Intro -->
