@@ -17,6 +17,9 @@ public class RoofOffer {
     private int size;
     private int roofType; // 0 = Flachdach, 1 = Satteldach etc.
 
+    public RoofOffer() {
+    }
+
     public RoofOffer(String title, int size, int roofType) {
         this.title = title;
         this.size = size;

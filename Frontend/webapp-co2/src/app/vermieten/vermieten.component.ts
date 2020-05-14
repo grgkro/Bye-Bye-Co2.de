@@ -22,11 +22,6 @@ export class VermietenComponent implements OnInit {
   constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
-
-    this._http.getRoofs().subscribe(data => {
-      this.roofs = data;
-      console.log(this.roofs);
-    });
   }
 
   saveRoof() {

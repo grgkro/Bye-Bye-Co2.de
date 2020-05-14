@@ -9,6 +9,9 @@ public class RoofOfferDto {
 //    private int roofTilt; //Neigung 0°, 15°, 30°, 45° etc.
 
 
+    public RoofOfferDto() {
+    }
+
     public RoofOfferDto(String title, int size, int roofType) {
         this.title = title;
         this.size = size;

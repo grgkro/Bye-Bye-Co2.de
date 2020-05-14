@@ -1,1 +1,14 @@
-<p>mieten works!</p>
+<h1>Dächer zur Miete:</h1>
+<div *ngIf="roofs">
+    <ul>
+        <li *ngFor="let roof of roofs">
+            <ul>
+                <li>Titel: {{ roof.title }}</li>
+                <li>Dachgröße: {{ roof.size }}</li>
+                <li>Dachart: {{ roof.roofType }}</li>
+            </ul>
+        </li>
+    </ul> 
+</div>
+
+

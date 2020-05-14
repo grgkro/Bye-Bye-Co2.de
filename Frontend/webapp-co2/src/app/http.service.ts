@@ -11,8 +11,8 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getRoofs() {
-    return this.http.get(this.serverPath + '/roofs/getAllRoofs');
+  getRoofOffers() {
+    return this.http.get(this.serverPath + '/roofs/allRoofOffers');
   }
 
   saveRoof(roof: Roof) {
