@@ -1,30 +1,34 @@
 package de.byebyeco2.Dtos;
 
 public class RoofOfferDto {
-    private int orientation; // 0 = south, 1 = southwest, 2 = west, ...
-    private int roofTilt; //Neigung 0°, 15°, 30°, 45° etc.
+    private String title;
+    private int size;
     private int roofType; // 0 = Flachdach, 1 = Satteldach etc.
 
-    public RoofOfferDto(int orientation, int roofTilt, int roofType) {
-        this.orientation = orientation;
-        this.roofTilt = roofTilt;
+//    private int orientation; // 0 = south, 1 = southwest, 2 = west, ...
+//    private int roofTilt; //Neigung 0°, 15°, 30°, 45° etc.
+
+
+    public RoofOfferDto(String title, int size, int roofType) {
+        this.title = title;
+        this.size = size;
         this.roofType = roofType;
     }
 
-    public int getOrientation() {
-        return orientation;
+    public String getTitle() {
+        return title;
     }
 
-    public void setOrientation(int orientation) {
-        this.orientation = orientation;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getRoofTilt() {
-        return roofTilt;
+    public int getSize() {
+        return size;
     }
 
-    public void setRoofTilt(int roofTilt) {
-        this.roofTilt = roofTilt;
+    public void setSize(int size) {
+        this.size = size;
     }
 
     public int getRoofType() {

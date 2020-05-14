@@ -1,6 +1,5 @@
 export interface Roof {
-    orientation: number;
-    roofTilt: number;
+    title: string;
+    size: number;
     roofType: number;
-
 }

@@ -13,9 +13,9 @@ export class VermietenComponent implements OnInit {
   name: String = '';
   roofs: Object;
   roof: Roof = {
-    orientation: 1,
-    roofTilt: 5,
-    roofType: 70
+    title: "Testdach for Database",
+    size: 50,
+    roofType: 1,
   };
 
 
@@ -29,10 +29,7 @@ export class VermietenComponent implements OnInit {
     });
   }
 
-  countClick() {
-    this.roof.orientation = 1;
-    this.roof.roofTilt = this.clickCounter;
-    this.roof.roofType = 50
+  saveRoof() {
     this._http.saveRoof(this.roof).subscribe(data => {
       console.log(data);
     })

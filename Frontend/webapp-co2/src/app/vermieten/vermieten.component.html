@@ -10,8 +10,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Titel der Anzeige</label>
                 <div class="col-md-8">
-                    <input id="textinput" name="textinput" type="text" placeholder="50qm Dach in Süddeutschland zu vermieten"
-                        class="form-control input-md" required="">
+                    <input id="titelInput" name="textinput" type="text" placeholder="50qm Dach in Süddeutschland zu vermieten"
+                        class="form-control input-md" required="" [(ngModel)]="roof.title">
                     <span class="help-block">help</span>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-4">
                     <div class="input-group">
                         <input id="appendedtext" name="appendedtext" class="form-control" placeholder="50"
-                            type="text">
+                            type="text" [(ngModel)]="roof.size">
                         <span class="input-group-addon">qm</span>
                     </div>
                 </div>
@@ -31,19 +31,18 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="selectbasic">Dachart</label>
                 <div class="col-md-4">
-                    <select id="selectbasic" name="selectbasic" class="form-control">
+                    <select id="selectbasic" name="selectbasic" class="form-control" [(ngModel)]="roof.roofType">
                         <option value="1">Flachdach</option>
                         <option value="2">Schrägdach</option>
                     </select>
                 </div>
             </div>
 
-            <!-- Button (Double) -->
+            <!-- Button -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="button1id">Anzeige einstellen</label>
                 <div class="col-md-8">
-                    <button id="button1id" name="button1id" class="btn btn-success">Absenden</button>
-                    <button id="button2id" name="button2id" class="btn btn-danger">Abbrechen</button>
+                    <button id="button1id" name="button1id" class="btn btn-success" (click)="saveRoof()">Speichern</button>
                 </div>
             </div>
 

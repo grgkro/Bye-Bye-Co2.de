@@ -6,24 +6,44 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="roof_offers")
-@Getter @Setter @NoArgsConstructor @ToString
-public class RoofOffer extends Listing {
+@Data  //generates getter,setter, toString etc.
+public class RoofOffer {
 
     @Id @Setter(AccessLevel.PROTECTED)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private int orientation; // 0 = south, 1 = southwest, 2 = west, ...
-    private int roofTilt; //Neigung 0°, 15°, 30°, 45° etc.
+    private String title;
+    private int size;
     private int roofType; // 0 = Flachdach, 1 = Satteldach etc.
-    private boolean ownUse;
-    private int sizeHousehold;
-    private int children;
-    private int adults;
 
-    public RoofOffer(int orientation, int roofTilt, int roofType) {
-        this.orientation = orientation;
-        this.roofTilt = roofTilt;
+    public RoofOffer(String title, int size, int roofType) {
+        this.title = title;
+        this.size = size;
         this.roofType = roofType;
     }
 }
+
+
+//maybe add later:
+//    private int orientation; // 0 = south, 1 = southwest, 2 = west, ...
+//    private int roofTilt; //Neigung 0°, 15°, 30°, 45° etc.
+//    private boolean ownUse;
+//    private int sizeHousehold;
+//    private int children;
+//    private int adults;
+//    private String title;
+//    private String description;
+//    private int viewCounter;
+//    private Path[] picPaths;
+//    private Date creationDate;
+//    private int squareMeters;
+//    private double longitude;
+//    private double latitude;
+//    private boolean shadowing;
+//    private String firstName;
+//    private String lastName;
+//    private String email;
+//    private String company;
+//    private String tel;
+//    private String mobile;
