@@ -21,7 +21,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^9.1.4",
+    "@angular/animations": "^9.1.7",
     "@angular/common": "^9.1.4",
     "@angular/compiler": "^9.1.4",
     "@angular/core": "^9.1.4",
@@ -31,11 +31,11 @@
     "@angular/router": "^9.1.4",
     "@ng-toolkit/serverless": "^8.1.0",
     "@ng-toolkit/universal": "^1.1.21",
+    "aws-serverless-express": "^3.3.6",
+    "cors": "^2.8.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "cors": "^2.8.5",
-    "aws-serverless-express": "^3.3.6"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",
